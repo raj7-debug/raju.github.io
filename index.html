@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Raju Ahmed</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+            color: #333;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .banner-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 0;
+            background: linear-gradient(120deg, #f9f9f9, #ffffff);
+        }
+        .banner-section img {
+            border-radius: 50%;
+            border: 5px solid #f1f1f1;
+            width: 200px;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .progress {
+            background-color: #f1f1f1;
+        }
+        .progress-bar {
+            animation: progressBar 1.5s ease-in-out;
+        }
+        @keyframes progressBar {
+            from {
+                width: 0%;
+            }
+            to {
+                width: inherit;
+            }
+        }
+        .vr-map {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vr-map div {
+            flex: 1 1 calc(33.333% - 10px);
+            height: 120px;
+            background: url('vr-map-placeholder.jpg') no-repeat center;
+            background-size: cover;
+            border-radius: 10px;
+        }
+        .footer-links a {
+            margin-right: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <!------navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">
+                <img src="image/IMG_5224.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <span data-translate="brand">Raju Ahmed</span>
+            </a>
+    
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#banner">
+                            <i class="fas fa-home me-2"></i>
+                            <span data-translate="nav_intro">Intro</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">
+                            <i class="fas fa-tools me-2"></i>
+                            <span data-translate="nav_skills">Skills</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">
+                            <i class="fas fa-briefcase me-2"></i>
+                            <span data-translate="nav_projects">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificates">
+                            <i class="fas fa-certificate me-2"></i>
+                            <span data-translate="nav_certificates">Certificates</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope me-2"></i>
+                            <span data-translate="nav_contact">Contact</span>
+                        </a>
+                    </li>
+    
+                    <!-- Language Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-language me-2"></i>
+                            <span data-translate="nav_language">English</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="switchLanguage('en')" data-translate="lang_english">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="switchLanguage('mal')" data-translate="lang_malay">Malay</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="switchLanguage('sp')" data-translate="lang_spanish">Spanish</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    
+    
+    
+
+    
+    
+<!-- Custom CSS for Hover Effect -->
+<style>
+   /* Navbar Links */
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline by default */
+    position: relative;
+    padding: 0.75rem 1rem; /* Uniform padding for alignment */
+}
+
+.navbar-nav .nav-link i {
+    font-size: 1.2rem; /* Icon size */
+    color: #fff; /* Icon color same as text */
+}
+
+/* Hover Effect with Underline */
+.navbar-nav .nav-link:hover {
+    color: #1500ff;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3300ff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+    transform: scaleX(1); /* Show underline */
+}
+
+/* Navbar Background */
+.navbar-dark.bg-dark {
+    background: linear-gradient(120deg, #f0f0f0, #255dec) !important;
+}
+
+/* Navbar Active Link */
+.navbar-nav .nav-item.active .nav-link {
+    color: #1100ff !important;
+    font-weight: bold;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    min-width: 200px;
+    border-radius: 5px;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #444;
+}
+
+.dropdown-menu .dropdown-item i {
+    font-size: 1rem;
+    margin-right: 8px;
+    color: #444;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #1500ff;
+}
+
+</style>
+
+   <!-- Banner Section (Full-Screen Portfolio with Gradient and Bubble Background) -->
+   <section id="banner" class="banner-section container-fluid" style="height: 100vh; background: linear-gradient(120deg, #fbfbfb, #1d78b5); position: relative; overflow: hidden;">
+    <!-- Overlay for text readability -->
+    <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3);"></div>
+    
+    <!-- Banner content -->
+    <div class="container d-flex flex-column justify-content-center align-items-center text-center text-dark" style="height: 100%; z-index: 1;" data-aos="fade-up" data-aos-duration="1500">
+        <!-- Image Frame with Border and Animation on Open -->
+        <div class="image-frame mb-4" data-aos="zoom-in" data-aos-duration="2000" style="background-color: #009dff; width: 250px; height: 250px; border-radius: 15px; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+            <img src="image/IMG_5224.jpg" alt="Your Photo" class="shadow-lg rounded" style="width: 220px; height: 220px; object-fit: cover;">
+        </div>
+        
+        <!-- Headline and Text -->
+        <h1 class="display-4 mb-3" data-aos="fade-left" data-aos-delay="100" style="font-size: 3rem; font-family: 'Roboto', sans-serif; color: black;" data-translate="banner_title">
+            Hi, I'm Raju Ahmed
+        </h1>
+        <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200" style="max-width: 600px; color: #333; font-family: 'Roboto', sans-serif;" data-translate="banner_description">
+            A passionate Software Engineering Intern with a focus on creating scalable software solutions. I specialize in building robust Frontend and backend systems and web applications. Currently pursuing my Bachelor's in Information Technology at Taylor’s University, Selangor, Malaysia.
+        </p>
+
+        <!-- Call to Action Button -->
+        <a href="#contact" class="btn btn-danger btn-lg mt-4" style="background-color: #002aff; border: none; padding: 15px 30px; font-size: 18px;" data-translate="banner_button">
+            Let's Connect
+        </a>
+    </div>
+
+    <!-- Background Design (Bubbles) -->
+    <div style="position: absolute; top: -50px; left: -50px; width: 150px; height: 150px; background: rgba(0,123,255,0.1); border-radius: 50%;"></div>
+    <div style="position: absolute; top: -100px; right: -100px; width: 200px; height: 200px; background: rgba(255,193,7,0.1); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -50px; left: 20px; width: 120px; height: 120px; background: rgba(40,167,69,0.1); border-radius: 50%;"></div>
+
+    <!-- Add Bubbles Animation in Background -->
+    <div class="bubbles"></div>
+</section>
+
+
+<!-- AOS Animation Library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- Bubble Animation -->
+<style>
+    /* Live Bubble Animation */
+    .bubbles {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .bubbles::before {
+        content: "";
+        position: absolute;
+        background: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 10%);
+        width: 100%;
+        height: 100%;
+        animation: moveBubbles 15s infinite linear;
+    }
+
+    @keyframes moveBubbles {
+        0% { transform: translate(0, 0); opacity: 1; }
+        100% { transform: translate(-100%, -100%); opacity: 0; }
+    }
+</style>
+
+<!-- About Me Section (Modern Design with Resume Details) -->
+<section id="about" style="background: linear-gradient(120deg, #e3f2fd, #ffffff); padding: 80px 0; position: relative; overflow: hidden;">
+    <div class="container text-center">
+        <h2 class="mb-4" data-aos="fade-up" data-aos-duration="1000" style="font-family: 'Roboto', sans-serif; color: #333;" data-translate="about_title">About Me</h2>
+        
+        <!-- Background Design (Bubbles) -->
+        <div style="position: absolute; top: -50px; left: -50px; width: 150px; height: 150px; background: rgba(0,123,255,0.1); border-radius: 50%;"></div>
+        <div style="position: absolute; top: -100px; right: -100px; width: 200px; height: 200px; background: rgba(255,193,7,0.1); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -50px; left: 20px; width: 120px; height: 120px; background: rgba(40,167,69,0.1); border-radius: 50%;"></div>
+
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-5">
+                <div class="image-frame mb-4" data-aos="zoom-in" data-aos-duration="2000" style="background-color: #4e83ed; width: 250px; height: 250px; border-radius: 20px; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                    <img src="image/IMG_5224.jpg" alt="Your Photo" class="shadow-lg rounded" style="width: 230px; height: 230px; object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <!-- Shortened Text (Closer to Image) -->
+                <p class="lead" data-aos="fade-left" data-aos-delay="200" style="max-width: 600px; color: #333; font-family: 'Roboto', sans-serif;" data-translate="about_paragraph_1">
+                    I’m a Software Engineer Intern with a strong background in web development. I specialize in creating efficient, user-centric applications and backend systems. Currently, I am gaining hands-on experience in optimizing performance and delivering scalable solutions.
+                </p>
+                <p class="lead" data-aos="fade-left" data-aos-delay="300" style="max-width: 600px; color: #333; font-family: 'Roboto', sans-serif;" data-translate="about_paragraph_2">
+                    With my academic journey and practical skills, I’m eager to contribute to impactful projects, continuously improving and growing as a developer.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- AOS Animation Library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- Bubble Animation -->
+<style>
+    /* Live Bubble Animation */
+    .bubbles {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .bubbles::before {
+        content: "";
+        position: absolute;
+        background: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 10%);
+        width: 100%;
+        height: 100%;
+        animation: moveBubbles 15s infinite linear;
+    }
+
+    @keyframes moveBubbles {
+        0% { transform: translate(0, 0); opacity: 1; }
+        100% { transform: translate(-100%, -100%); opacity: 0; }
+    }
+</style>
+
+
+    <!-- Skills Section -->
+<section id="skills" class="py-5" style="background: linear-gradient(120deg, #e3f2fd, #ffffff); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 20px; left: 0; right: 0; bottom: 0; background: rgba(0, 123, 255, 0.2); border-radius: 50%; width: 120px; height: 120px; animation: bubble 4s infinite;"></div>
+    <div style="position: absolute; top: -50px; right: 100px; background: rgba(255, 193, 7, 0.1); width: 150px; height: 150px; border-radius: 50%; animation: bubble 4s infinite;"></div>
+    <div style="position: absolute; bottom: -50px; left: 20px; background: rgba(40, 167, 69, 0.1); width: 100px; height: 100px; border-radius: 50%; animation: bubble 4s infinite;"></div>
+    
+    <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="skills_title">Skills</h2>
+        <div class="row text-center">
+            <!-- Frontend Development -->
+            <div class="col-md-3" data-aos="fade-right">
+                <i class="fab fa-html5 fa-3x mb-3"></i>
+                <h5 data-translate="frontend_title">Frontend Development</h5>
+                <p data-translate="frontend_description">HTML, CSS, JavaScript, React.js, Vue.js</p>
+            </div>
+
+            <!-- Backend Development -->
+            <div class="col-md-3" data-aos="fade-up">
+                <i class="fab fa-php fa-3x mb-3"></i>
+                <h5 data-translate="backend_title">Backend Development</h5>
+                <p data-translate="backend_description">PHP, Python, Node.js, MySQL</p>
+            </div>
+
+            <!-- Tools & Frameworks -->
+            <div class="col-md-3" data-aos="fade-left">
+                <i class="fas fa-tools fa-3x mb-3"></i>
+                <h5 data-translate="tools_title">Tools & Frameworks</h5>
+                <p data-translate="tools_description">Git, Bootstrap, Debugging Tools</p>
+            </div>
+
+            <!-- Additional Technologies (Design Tools) -->
+            <div class="col-md-3" data-aos="fade-right">
+                <i class="fab fa-figma fa-3x mb-3"></i>
+                <h5 data-translate="additional_tools_title">Additional Tools</h5>
+                <div class="mt-3" data-translate="additional_tools_description">Canva, Figma, JustInMind, Adobe Illustrator</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Expertise Section -->
+<section id="expertise" class="py-5" style="background: linear-gradient(120deg, #e3f2fd, #ffffff); position: relative; overflow: hidden;">
+    <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="expertise_title">Expertise</h2>
+        <div class="row text-center">
+            <!-- Web Development Expertise -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-laptop-code fa-3x mb-3"></i>
+                <h5 data-translate="web_dev_title">Web Development</h5>
+                <p data-translate="web_dev_description">Building responsive, dynamic websites with modern technologies.</p>
+            </div>
+
+            <!-- IT Support Expertise -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-headset fa-3x mb-3"></i>
+                <h5 data-translate="it_support_title">IT Support</h5>
+                <p data-translate="it_support_description">Providing technical support for troubleshooting and issue resolution.</p>
+            </div>
+
+            <!-- E-Commerce Expertise -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-store fa-3x mb-3"></i>
+                <h5 data-translate="ecommerce_title">E-Commerce</h5>
+                <p data-translate="ecommerce_description">Developing scalable, user-friendly e-commerce platforms.</p>
+            </div>
+        </div>
+        <div class="row text-center mt-4">
+            <!-- Project Management -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-tasks fa-3x mb-3"></i>
+                <h5 data-translate="project_management_title">Project Management</h5>
+                <p data-translate="project_management_description">Managing and coordinating projects from inception to completion.</p>
+            </div>
+
+            <!-- Team Collaboration -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-users fa-3x mb-3"></i>
+                <h5 data-translate="team_collaboration_title">Team Collaboration</h5>
+                <p data-translate="team_collaboration_description">Facilitating efficient teamwork and communication.</p>
+            </div>
+
+            <!-- Leadership -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                <i class="fas fa-cogs fa-3x mb-3"></i>
+                <h5 data-translate="leadership_title">Leadership</h5>
+                <p data-translate="leadership_description">Leading and motivating teams to achieve their best performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- AOS Animation Library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+   <!-- Projects Section -->
+<section id="projects" class="py-5" style="background: linear-gradient(120deg, #e3f2fd, #ffffff); position: relative; overflow: hidden;">
+    <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="projects_title">Projects</h2>
+        <div class="row g-4">
+            <!-- Cyber Patrol Project -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card" style="height: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <img src="image/Screenshot 2024-12-10 at 8.27.13 PM.png" class="card-img-top" alt="Cyber Patrol" style="height: 200px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                    <div class="card-body">
+                        <h5 class="card-title" data-translate="cyber_patrol_title">Cyber Patrol</h5>
+                        <p data-translate="cyber_patrol_description">A gamified cybersecurity app for teenagers using Laravel and Flutter.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nasi Kandar WAP Project -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card" style="height: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <img src="https://media.licdn.com/dms/image/v2/D5622AQHBHmXBhSelUA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1731827255964?e=1736985600&v=beta&t=G7rEbsuLYK_IH_PVVyF8QkIabDpoiZ7M34shq9AzirA" class="card-img-top" alt="Nasi Kandar WAP" style="height: 200px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                    <div class="card-body">
+                        <h5 class="card-title" data-translate="nasi_kandar_title">Nasi Kandar WAP</h5>
+                        <p data-translate="nasi_kandar_description">A restaurant management system optimized for performance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hxred Wallet Project -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card" style="height: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <img src="https://media.licdn.com/dms/image/v2/D5622AQHT1MUKiB-SBA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1730781544995?e=1736985600&v=beta&t=5inDVOwCfaJuWbTwhW7ZUHo1nCivR-Pfxj61dZ7k5rI" class="card-img-top" alt="Hxred Wallet" style="height: 200px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                    <div class="card-body">
+                        <h5 class="card-title" data-translate="hxred_wallet_title">Hxred Wallet</h5>
+                        <p data-translate="hxred_wallet_description">An educational e-wallet system with real-time budget tracking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ngo Project -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="card" style="height: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <img src="image/Screenshot 2024-12-10 at 8.30.33 PM.png" class="card-img-top" alt="Ngo Project" style="height: 200px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                    <div class="card-body">
+                        <h5 class="card-title" data-translate="ngo_project_title">Ngo Project</h5>
+                        <p data-translate="ngo_project_description">A platform designed to streamline non-profit organization management and operations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Library Management System Project -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="card" style="height: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <img src="image/Screenshot 2024-12-10 at 8.33.19 PM.png" class="card-img-top" alt="Library Management System" style="height: 200px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                    <div class="card-body">
+                        <h5 class="card-title" data-translate="library_management_title">Library Management System</h5>
+                        <p data-translate="library_management_description">A system to manage library books, users, and borrowing processes efficiently.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SDG Project App for Reusable Product Selling -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="card" style="height: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <img src="image/Screenshot 2024-12-10 at 8.39.11 PM.png" class="card-img-top" alt="SDG Project App" style="height: 200px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                    <div class="card-body">
+                        <h5 class="card-title" data-translate="sdg_project_title">SDG Project App</h5>
+                        <p data-translate="sdg_project_description">An app dedicated to promoting and selling reusable products aligned with SDGs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Work Experience Section -->
+<section id="work-experience" class="py-5" style="background: linear-gradient(120deg, #ffffff, #e3f2fd); position: relative; overflow: hidden;">
+    <div class="container">
+        <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="work_experience_title">Work Experience</h2>
+        <div class="row g-4">
+            <!-- Online ICT Tutor -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card" style="height: 100%; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); overflow: hidden; position: relative;">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-chalkboard-teacher fa-2x text-primary me-3"></i>
+                            <h5 class="card-title mb-0" data-translate="ict_tutor_title">Online ICT Tutor (Part-Time)</h5>
+                        </div>
+                        <p class="card-text"><strong data-translate="ict_tutor_year">2021</strong></p>
+                        <p data-translate="ict_tutor_description">Taught basic ICT concepts, including computer fundamentals and MS Office tools, to school students through remote sessions, ensuring clear and interactive learning.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT Help Desk -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card" style="height: 100%; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); overflow: hidden; position: relative;">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-headset fa-2x text-success me-3"></i>
+                            <h5 class="card-title mb-0" data-translate="it_help_title">IT Help Desk (Part-Time)</h5>
+                        </div>
+                        <p class="card-text"><strong data-translate="it_help_year">2020</strong></p>
+                        <p data-translate="it_help_description">Provided remote IT support for productivity tools like Excel, Word, and PowerPoint, ensuring efficient troubleshooting and assisting users in resolving technical issues.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graphics Designer -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card" style="height: 100%; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); overflow: hidden; position: relative;">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-paint-brush fa-2x text-warning me-3"></i>
+                            <h5 class="card-title mb-0" data-translate="graphics_designer_title">Graphics Designer (Part-Time)</h5>
+                        </div>
+                        <p class="card-text"><strong data-translate="graphics_designer_year">2019 - 2021</strong></p>
+                        <p data-translate="graphics_designer_description">Designed creative visuals for branding, marketing, and social media campaigns for Rajshahi Nursery (Treeplant) Shop. Focused on engaging designs to promote the business on Facebook Marketplace.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-Commerce Page Admin -->
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="card" style="height: 100%; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); overflow: hidden; position: relative;">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-shopping-cart fa-2x text-danger me-3"></i>
+                            <h5 class="card-title mb-0" data-translate="ecommerce_admin_title">E-Commerce Page Admin (Part-Time)</h5>
+                        </div>
+                        <p class="card-text"><strong data-translate="ecommerce_admin_year">2022 - 2023</strong></p>
+                        <p data-translate="ecommerce_admin_description">Managed the Pushpokola Facebook page and Marketplace presence for handmade showpieces. Handled customer inquiries, order processing, and page content creation to boost sales and engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+   <!-- Certificates Section -->
+<section id="certificates" class="py-5" style="background: linear-gradient(120deg, #e3f2fd, #ffffff); position: relative; overflow: hidden;">
+    <div class="container">
+        <!-- Background Design -->
+        <div style="position: absolute; top: -50px; left: -50px; width: 150px; height: 150px; background: rgba(0,123,255,0.1); border-radius: 50%;"></div>
+        <div style="position: absolute; top: -100px; right: -100px; width: 200px; height: 200px; background: rgba(255,193,7,0.1); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -50px; left: 20px; width: 120px; height: 120px; background: rgba(40,167,69,0.1); border-radius: 50%;"></div>
+
+        <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="certificates_title">Certificates</h2>
+        <div class="row g-4">
+            <!-- AWS EC2 Certification -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <img src="image/Screenshot 2024-12-10 at 8.12.10 PM.png" width="100%" height="250px" style="border: none; border-radius: 10px;">
+                <p class="text-center mt-2" data-translate="aws_ec2_certificate">Build with Amazon EC2</p>
+            </div>
+            <!-- Data Analysis with Python -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <img src="image/Screenshot 2024-12-10 at 8.15.47 PM.png" width="100%" height="250px" style="border: none; border-radius: 10px;">
+                <p class="text-center mt-2" data-translate="data_analysis_certificate">Data Analysis with Python</p>
+            </div>
+            <!-- Blockchain Solutions with AWS -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <img src="image/Screenshot 2024-12-10 at 8.17.24 PM.png" width="100%" height="250px" style="border: none; border-radius: 10px;">
+                <p class="text-center mt-2" data-translate="blockchain_aws_certificate">Designing Blockchain Solutions with AWS</p>
+            </div>
+            <!-- AWS ECS Certification -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                <img src="image/Screenshot 2024-12-10 at 8.19.06 PM.png" width="100%" height="250px" style="border: none; border-radius: 10px;">
+                <p class="text-center mt-2" data-translate="aws_ecs_certificate">Getting Started with Amazon ECS</p>
+            </div>
+            <!-- MySQL Command Line Certification -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                <img src="image/Screenshot 2024-12-10 at 8.21.04 PM.png" width="100%" height="250px" style="border: none; border-radius: 10px;">
+                <p class="text-center mt-2" data-translate="mysql_certificate">Getting Started with MySQL Command Line</p>
+            </div>
+            <!-- Responsible AI Certification -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="700">
+                <img src="image/Screenshot 2024-12-10 at 8.22.11 PM.png" width="100%" height="250px" style="border: none; border-radius: 10px;">
+                <p class="text-center mt-2" data-translate="responsible_ai_certificate">Introduction to Responsible AI</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5" style="background: linear-gradient(120deg, #e3f2fd, #ffffff); position: relative; overflow: hidden;">
+    <div class="container">
+        <!-- Background Design -->
+        <div style="position: absolute; top: -50px; left: -50px; width: 150px; height: 150px; background: rgba(0,123,255,0.1); border-radius: 50%;"></div>
+        <div style="position: absolute; top: -100px; right: -100px; width: 200px; height: 200px; background: rgba(255,193,7,0.1); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -50px; left: 20px; width: 120px; height: 120px; background: rgba(40,167,69,0.1); border-radius: 50%;"></div>
+
+        <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="contact_title">Contact Me</h2>
+        <div class="row align-items-stretch">
+            <!-- VR Map Section (Interactive Map) -->
+            <div class="col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-right">
+                <div style="flex-grow: 1;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.7742102199654!2d101.70011339999999!3d3.1541482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc482c63f5b6d5%3A0xa454c90126719c94!2s6%2C%20Persiaran%20Capsquare%2C%20City%20Centre%2C%2050100%20Kuala%20Lumpur%2C%20Wilayah%20Persekutuan%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1733832037306!5m2!1sen!2smy" 
+                        width="100%" height="100%" style="border: 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(216, 150, 150, 0.1);" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-left">
+                <form style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 100%; height: 100%; display: flex; flex-direction: column;">
+                    <div class="mb-4">
+                        <label for="name" class="form-label" data-translate="contact_name_label">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required data-translate="contact_name_placeholder">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="form-label" data-translate="contact_email_label">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Your Email" required data-translate="contact_email_placeholder">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="form-label" data-translate="contact_message_label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Enter Your Message" required data-translate="contact_message_placeholder"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-auto" data-translate="contact_submit_button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+<footer class="py-4" style="background: linear-gradient(120deg, #fbfbfb, #1d78b5); position: relative; overflow: hidden;">
+    <div class="container">
+        <!-- Background Design -->
+        <div style="position: absolute; top: -50px; left: -50px; width: 150px; height: 150px; background: rgba(0,0,255,0.1); border-radius: 50%;"></div>
+        <div style="position: absolute; top: -100px; right: -100px; width: 200px; height: 200px; background: rgba(255,0,0,0.1); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -50px; left: 20px; width: 120px; height: 120px; background: rgba(0,255,0,0.1); border-radius: 50%;"></div>
+
+        <div class="row">
+            <!-- Contact Info -->
+            <div class="col-md-3">
+                <h5 data-translate="footer_contact_title">Contact</h5>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:rehanraj2812@gmail.com" class="text-dark">rehanraj2812@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> +60-1131267547</p>
+                <p>
+                    <a href="https://linkedin.com" target="_blank" class="text-dark me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://github.com" target="_blank" class="text-dark me-3"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="text-dark"><i class="fab fa-twitter fa-lg"></i></a>
+                </p>
+            </div>
+
+            <!-- Location -->
+            <div class="col-md-3">
+                <h5 data-translate="footer_location_title">Location</h5>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-translate="footer_location_taylors">Taylor’s University, Subang Jaya</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-translate="footer_location_kl">Kuala Lumpur, Malaysia</span></p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-3">
+                <h5 data-translate="footer_quick_links_title">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#banner" class="text-dark" data-translate="footer_link_about">About Me</a></li>
+                    <li><a href="#skills" class="text-dark" data-translate="footer_link_skills">Skills</a></li>
+                    <li><a href="#projects" class="text-dark" data-translate="footer_link_projects">Projects</a></li>
+                    <li><a href="#certificates" class="text-dark" data-translate="footer_link_certificates">Certificates</a></li>
+                    <li><a href="#workexperince" class="text-dark" data-translate="footer_link_certificates">Work Experience</a></li>
+                    <li><a href="#contact" class="text-dark" data-translate="footer_link_contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- New Section -->
+            <div class="col-md-3">
+                <h5 data-translate="footer_subscribe_title">Subscribe</h5>
+                <p data-translate="footer_subscribe_description">Get the latest updates and insights directly to your inbox.</p>
+                <form>
+                    <div class="mb-2">
+                        <input type="text" class="form-control" placeholder="Your Name" required data-translate="footer_subscribe_name_placeholder">
+                    </div>
+                    <div class="mb-2">
+                        <input type="email" class="form-control" placeholder="Your Email" required data-translate="footer_subscribe_email_placeholder">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm" data-translate="footer_subscribe_button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+ </footer>
+
+
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script src="langswitch.js"></script>
+</body>
+</html>

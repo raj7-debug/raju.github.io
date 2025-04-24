@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raju Ahmed | Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- CSS Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        .splash-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298, #4e4376);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .splash-content {
+            z-index: 2;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .splash-title {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .splash-subtitle {
+            margin-top: 1rem;
+            font-size: 1.7rem;
+            font-weight: 300;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        .programming-icon {
+            margin-top: 2rem;
+            font-size: 6rem;
+            color: #FFD700;
+            animation: bounce 2s infinite;
+        }
+
+        .background-decorations {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .circle-1 {
+            width: 250px;
+            height: 250px;
+            top: 15%;
+            left: 20%;
+        }
+
+        .circle-2 {
+            width: 300px;
+            height: 300px;
+            bottom: 25%;
+            right: 18%;
+        }
+
+        .circle-3 {
+            width: 180px;
+            height: 180px;
+            top: 45%;
+            right: 25%;
+        }
+
+        .circle-4 {
+            width: 130px;
+            height: 130px;
+            bottom: 15%;
+            left: 15%;
+        }
+
+        .loading-dots {
+            margin-top: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .loading-dots span {
+            animation: pulse 1.5s infinite;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+    <script>
+        // Redirect to index.html after 4 seconds
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 4000);
+    </script>
+</head>
+<body>
+    <div class="splash-container">
+        <!-- Background Decorations -->
+        <div class="background-decorations">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+            <div class="circle circle-4"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="splash-content">
+            <i class="fas fa-laptop-code programming-icon"></i>
+            <h1 class="splash-title">Welcome to Raju Ahmed's Portfolio</h1>
+            <p class="splash-subtitle">Software Engineer Intern| Web Developer | Innovator</p>
+            <div class="loading-dots">
+                <span>.</span><span>.</span><span>.</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
